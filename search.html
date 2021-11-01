@@ -5,8 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="search.css">
 </head>
 <body>
+    <header id="header__flex-wrapper">
+        <form id ="header__search-form">
+            <input type="text" id="header__search-input" placeholder="Search...">
+            <input type="submit" id="header__search-button" value="submit">
+        </form>
+    </header>
+
+    <div id="result-count">test...</div>
     
+    
+    <div id="list-wrapper">
+        <div class="card-design">
+            <div class="pic">This is a pic</div>
+            <div class="name">name</div>
+        </div>
+        <div class="card-design">
+            <div class="pic">This is a pic</div>
+            <div class="name">name</div>
+        </div>
+    </div>
+    <div class='test'></div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch-jsonp/1.0.6/fetch-jsonp.min.js"></script>
+<script type="text/javascript" src="search.js"></script>
 </html>

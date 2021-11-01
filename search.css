@@ -1,0 +1,58 @@
+#header__flex-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 6rem;
+    width: 100%;
+    background-color: teal;
+}
+#header__search-form{
+    flex: 0 0 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#header__search-input{
+    border: none;
+    margin-right: -3.25rem;
+    border-radius: 100px;
+    width: 80%;
+}
+#header__search-button{
+    height: 2rem;
+    width: 2rem;
+    /* border-radius: 100px; */
+    border: none;
+    background-color: none;
+    
+}
+#result-count{
+    display: flex;
+    justify-content: center;
+    color: brown;
+    border-bottom: 1px solid green;
+}
+#list-wrapper{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+}
+.card-design{
+    display: flex;
+    flex-direction: column;
+    border: 1px soild black;
+    background-color: gray;
+    border-radius: 3px;
+    flex: 0 0 7rem;
+    align-items: center;
+
+}
+.pic{
+    height: 100px;
+    width: 100px;
+    /* background-color: blue; */
+    margin-top: .2rem;
+}
+.name{
+
+}
