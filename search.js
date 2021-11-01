@@ -1,21 +1,3 @@
-
-function getArtist(artistName){
-    fetch(`https://itunes.apple.com/search?term=${artistName}&media=music&entity=album&attribute=artistTerm&limit=200​`)
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-        console.log(`The result count is ${data.resultCount}`);
-        console.log(`The first album name is ${data.results[0].collectionName}`);
-        data.results.forEach(element => {
-            console.log(`The album name is ${element.collectionName}`);
-            console.log(`The album cover is ${element.collectionViewUrl}`);
-        });
-        
-    })
-}
-
-getArtist("adele");
-
 //GRABING THE FORM ELEMENT
 let userInput = document.getElementById('header__search-form')
 
