@@ -31,39 +31,41 @@ function formSubmited(e) {
         
         //MODIFACTION FOR PAGANTION
         let beginCounter = 0
+        //GRAB THE BUTTON PARENT
+        let btns = document.getElementById('pages')
+        btns.replaceChildren()
+
         //LOOP THROUGH EACH RESULT TO CREATE THE CARDS
         data.results.forEach(element => {
         //MODIFACTION FOR PAGANTION
             if(beginCounter<20){
+                //CREATE A NEW CARD
+                let newCard = document.createElement('div')
+                
+                //CREATE THE NEW CARD PIC
+                let newCardPic = document.createElement('img')
+                
+                //GIVE THE IMG THE SOURCE ADDRESS
+                newCardPic.src = element.artworkUrl60;
 
-            //CREATE A NEW CARD
-            let newCard = document.createElement('div')
-            
-            //CREATE THE NEW CARD PIC
-            let newCardPic = document.createElement('img')
-            
-            //GIVE THE IMG THE SOURCE ADDRESS
-            newCardPic.src = element.artworkUrl60;
+                //CREATE THE NEW CARD NAME
+                let newCardName = document.createElement('div')
+                
+                //GIVE THE NEW CARD THEIR CLASS NAMES
+                newCard.setAttribute('class','card-design')
+                newCardPic.setAttribute('class','pic')
+                newCardName.setAttribute('class','name')
 
-            //CREATE THE NEW CARD NAME
-            let newCardName = document.createElement('div')
-            
-            //GIVE THE NEW CARD THEIR CLASS NAMES
-            newCard.setAttribute('class','card-design')
-            newCardPic.setAttribute('class','pic')
-            newCardName.setAttribute('class','name')
+                //CREATE NAME TEXT NODE
+                newCardNameText = document.createTextNode(element.collectionName)
 
-            //CREATE NAME TEXT NODE
-            newCardNameText = document.createTextNode(element.collectionName)
-
-            //APPEND EVERYTHING
-            newCardName.appendChild(newCardNameText)
-            newCard.appendChild(newCardPic)
-            newCard.appendChild(newCardName)
-            resultCard.appendChild(newCard)
-        
+                //APPEND EVERYTHING
+                newCardName.appendChild(newCardNameText)
+                newCard.appendChild(newCardPic)
+                newCard.appendChild(newCardName)
+                resultCard.appendChild(newCard)
+            }
             beginCounter++
-        }
         });
 
 
@@ -83,11 +85,7 @@ function formSubmited(e) {
             newBtn.appendChild(btnTextNode)
             newBtn.setAttribute('class','test')
             newBtn.addEventListener('click', function(event){
-                console.log(`HERE IS THE EVENT ELEMENT`);
-                console.log(event);
-                console.log(`HERE IS THE CURRENT PAGE`);
-                console.log(i);
-                newWrapper.replaceChildren()
+                newWrapper.replaceChildren() 
                 let indexStart = itemPerPage * i
                 let indexEnd = itemPerPage + indexStart
                 counter = 0
@@ -121,10 +119,11 @@ function formSubmited(e) {
                     }
                     counter++
                 })
-
-
+                // newWrapper.replaceChildren()
             })
             parent.appendChild(newBtn)
+            
+
             console.log(newBtn)
             console.log(`HI`)
         }        
